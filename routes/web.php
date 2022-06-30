@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('admin')->namespace('\App\Http\Controllers\Admin')->name('admin.')->group(function () {
+    Route::get('/', 'MainController@index')->name('index');
+    Route::resource('/poem_categories', 'PoemCategoryController');
+//    Route::resource('/tags', 'TagController');
+//    Route::resource('/posts', 'PostController');
+});

@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 3%;
+}
+
+/*aside, footer, address, section, nav, header {
+	display:block;
+}
+
+img, iframe, video, embed {
+	max-width: 100% !important;
+}*/
