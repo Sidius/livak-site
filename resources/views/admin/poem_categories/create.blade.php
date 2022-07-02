@@ -26,7 +26,7 @@
                                     <label for="title">Название</label>
                                     <input type="text" name="title"
                                            class="form-control @error('title') is-invalid @enderror"
-                                           id="title" placeholder="Название">
+                                           id="title" placeholder="Название" value="{{ old('title') }}">
                                 </div>
                             </div>
                             <!-- /.card-body -->
