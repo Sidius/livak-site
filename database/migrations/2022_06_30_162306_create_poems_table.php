@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('text');
-            $table->integer('poem_category_id')->unsigned();
+            $table->integer('poem_category_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }
