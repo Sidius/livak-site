@@ -228,13 +228,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('admin.poems.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Список поэм</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('admin.poems.create') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Новая поэма</p>
                                 </a>

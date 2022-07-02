@@ -10,6 +10,13 @@ class Poem extends Model
 {
     use HasFactory, Sluggable;
 
+    protected $fillable = ['title', 'text', 'poem_category_id'];
+
+    public function poemCategory()
+    {
+        return $this->belongsTo(PoemCategory::class);
+    }
+
     /**
      * Return the sluggable configuration array for this model.
      *

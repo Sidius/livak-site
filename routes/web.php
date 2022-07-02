@@ -20,6 +20,6 @@ Route::get('/', function () {
 Route::prefix('admin')->namespace('\App\Http\Controllers\Admin')->name('admin.')->group(function () {
     Route::get('/', 'MainController@index')->name('index');
     Route::resource('/poem_categories', 'PoemCategoryController');
-//    Route::resource('/tags', 'TagController');
+    Route::resource('/poems', 'PoemController');
 //    Route::resource('/posts', 'PostController');
 });
