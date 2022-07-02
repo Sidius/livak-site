@@ -240,7 +240,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('admin.poem_categories.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Список категорий поэм</p>
                                 </a>
