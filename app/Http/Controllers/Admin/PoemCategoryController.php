@@ -106,6 +106,7 @@ class PoemCategoryController extends Controller
     {
         $poem_category = PoemCategory::query()->find($id);
         if ($poem_category) {
+            $poem_category->poems()->delete();
             $poem_category->delete();
             return redirect()->route('admin.poem_categories.index')->with('success', 'Категория поэмы удалена');
         }
