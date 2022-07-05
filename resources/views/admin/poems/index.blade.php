@@ -25,7 +25,7 @@
             </div>
             @isset($poems)
                 <div class="card-body">
-                    <a href="{{ route('admin.poems.create') }}" class="btn btn-primary mb-3"> Добавить категорию поэмы</a>
+                    <a href="{{ route('admin.poems.create') }}" class="btn btn-primary mb-3"> Добавить поэму</a>
 {{--                    @if($poem_categories->count())--}}
                     @if(count($poems))
                         <div class="table-responsive">
