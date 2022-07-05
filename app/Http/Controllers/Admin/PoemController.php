@@ -46,7 +46,7 @@ class PoemController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|max:255',
             'text' => 'required',
             'poem_category_id' => 'nullable|integer',
         ]);
@@ -79,7 +79,7 @@ class PoemController extends Controller
         $poem = Poem::query()->find($id);
 
         if ($poem) {
-            $poem_categories = PoemCategory::query()->pluck('title', 'id')->all();;
+            $poem_categories = PoemCategory::query()->pluck('title', 'id')->all();
 
             return view('admin.poems.edit', compact('poem', 'poem_categories', 'title'));
         }
@@ -96,7 +96,7 @@ class PoemController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|max:255',
             'text' => 'required',
             'poem_category_id' => 'integer',
         ]);

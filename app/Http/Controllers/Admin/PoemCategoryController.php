@@ -41,7 +41,7 @@ class PoemCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|max:255',
         ]);
 
         PoemCategory::query()->create($request->all());
@@ -87,7 +87,7 @@ class PoemCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|max:255',
         ]);
 
         $poem_category = PoemCategory::query()->find($id);
