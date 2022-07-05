@@ -4,11 +4,11 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-// php artisan make:factory PoemFactory -m Poem
+// php artisan make:factory PostFactory -m Post
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Poem>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
-class PoemFactory extends Factory
+class PostFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,6 @@ class PoemFactory extends Factory
         return [
             'title' => $this->faker->words(1, true),
             'text' => $this->faker->paragraph(1),
-            'poem_category_id' => $this->faker->numberBetween(1, 7),
         ];
     }
 }
