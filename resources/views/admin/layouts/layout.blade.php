@@ -10,6 +10,12 @@
 
     <link rel="stylesheet" href="{{ asset('public/assets/admin/css/admin.css') }}">
 {{--    @vite('resources/assets/admin/plugins/fontawesome-free/css/all.min.css')--}}
+
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 300px;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -205,13 +211,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('admin.posts.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Список статей</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('admin.posts.create') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Новая статья</p>
                                 </a>
@@ -273,7 +279,7 @@
         <div class="float-right d-none d-sm-block">
             <b>Version</b> 3.2.0
         </div>
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-{{ date('Y') }} <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->
@@ -294,6 +300,64 @@
            $(this).closest('.has-treeview').addClass('menu-open');
        }
     });
+
+    bsCustomFileInput.init();
 </script>
+
+<script src="{{ asset('public/assets/admin/ckeditor5/build/ckeditor.js') }}"></script>
+<script src="{{ asset('public/assets/admin/ckfinder/ckfinder.js') }}"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#text' ), {
+            ckfinder: {
+                uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
+            },
+            toolbar: {
+                items: [
+                    'heading',
+                    '|',
+                    'bold',
+                    'italic',
+                    'link',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'indent',
+                    'outdent',
+                    'alignment',
+                    '|',
+                    'blockQuote',
+                    'insertTable',
+                    'undo',
+                    'redo',
+                    'CKFinder',
+                    'mediaEmbed',
+                ],
+                language: 'ru',
+                image: {
+                    toolbar: [ 'toggleImageCaption', 'imageTextAlternative' ]
+                },
+                // image: {
+                //     toolbar: [
+                //         'imageTextAlternative',
+                //         'imageStyle:full',
+                //         'imageStyle:side',
+                //     ],
+                // },
+                table: {
+                    contentToolbar: [
+                        'tableColumn',
+                        'tableRow',
+                        'mergeTableCells',
+                    ],
+                },
+                licenseKey: '',
+            }
+        } )
+        .catch( function( error ) {
+            console.error( error );
+        } );
+</script>
+
 </body>
 </html>

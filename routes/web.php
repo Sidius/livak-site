@@ -21,5 +21,5 @@ Route::prefix('admin')->namespace('\App\Http\Controllers\Admin')->name('admin.')
     Route::get('/', 'MainController@index')->name('index');
     Route::resource('/poem_categories', 'PoemCategoryController');
     Route::resource('/poems', 'PoemController');
-//    Route::resource('/posts', 'PostController');
+    Route::resource('/posts', 'PostController');
 });

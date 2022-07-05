@@ -10,6 +10,8 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
 
+    protected $fillable = ['title', 'text'];
+
     /**
      * Return the sluggable configuration array for this model.
      *
