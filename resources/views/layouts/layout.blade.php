@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{{ asset('assets/front/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,12 +42,12 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="assets/front/lib/typed/typed.min.js"></script>
-<script src="assets/front/lib/easing/easing.min.js"></script>
-<script src="assets/front/lib/waypoints/waypoints.min.js"></script>
-<script src="assets/front/lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="assets/front/lib/isotope/isotope.pkgd.min.js"></script>
-<script src="assets/front/lib/lightbox/js/lightbox.min.js"></script>
+<script src="{{ asset('assets/front/lib/typed/typed.min.js') }}"></script>
+<script src="{{ asset('assets/front/lib/easing/easing.min.js') }}"></script>
+<script src="{{ asset('assets/front/lib/waypoints/waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/front/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/front/lib/isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/front/lib/lightbox/js/lightbox.min.js') }}"></script>
 
 @vite([
     'resources/assets/front/mail/jqBootstrapValidation.min.js',

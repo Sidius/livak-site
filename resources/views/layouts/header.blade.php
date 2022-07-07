@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/prime_folder/livak_photo.jpg" alt="">
+                <img class="img-fluid w-100 rounded-circle shadow-sm" src="{{ asset('img/prime_folder/livak_photo.jpg') }}" alt="">
             </div>
             <div class="col-lg-7 text-center text-lg-left">
                 <h3 class="text-white font-weight-normal mb-3">Меня зовут</h3>

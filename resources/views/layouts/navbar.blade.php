@@ -11,6 +11,7 @@
             <a href="#home" class="nav-item nav-link active">Главная</a>
             <a href="#about" class="nav-item nav-link">О себе</a>
             <a href="#quality" class="nav-item nav-link">Образование, интересы &amp; опыт</a>
+            <a href="#poems" class="nav-item nav-link">Поэтическая страничка</a>
         </div>
     </div>
 </nav>
