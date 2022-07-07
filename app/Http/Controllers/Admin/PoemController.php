@@ -19,7 +19,7 @@ class PoemController extends Controller
     {
         $title = 'Список поэм';
 
-        $poems = Poem::query()->paginate(5);
+        $poems = Poem::query()->with('poemCategory')->paginate(5);
         return view('admin.poems.index', compact('poems', 'title'));
     }
 
