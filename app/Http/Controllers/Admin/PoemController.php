@@ -98,7 +98,7 @@ class PoemController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'text' => 'required',
-            'poem_category_id' => 'integer',
+            'poem_category_id' => 'nullable|integer',
         ]);
 
         $poem = Poem::query()->find($id);
