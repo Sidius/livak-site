@@ -8,10 +8,12 @@
     </button>
     <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
         <div class="navbar-nav m-auto py-0">
-            <a href="#home" class="nav-item nav-link active">Главная</a>
-            <a href="#about" class="nav-item nav-link">О себе</a>
-            <a href="#quality" class="nav-item nav-link">Образование, интересы &amp; опыт</a>
-            <a href="#poems" class="nav-item nav-link">Поэтическая страничка</a>
+            @section('menu_links')
+                <a href="#home" class="nav-item nav-link active">Главная</a>
+                <a href="#about" class="nav-item nav-link">О себе</a>
+                <a href="#quality" class="nav-item nav-link">Образование, интересы &amp; опыт</a>
+                <a href="#poems" class="nav-item nav-link">Поэтическая страничка</a>
+            @show
         </div>
     </div>
 </nav>

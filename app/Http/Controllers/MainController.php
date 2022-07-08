@@ -11,9 +11,11 @@ class MainController extends Controller
 {
     public function index()
     {
-        $poem_categories = PoemCategory::query()->get();
-        $poems = Poem::query()->where('poem_category_id', '=', null)->get();
+        $title = 'Главная страница';
 
-        return view('index', compact('poem_categories', 'poems'));
+        $poem_categories = PoemCategory::query()->get();
+        $poems = Poem::query()->where('poem_category_id', null)->get();
+
+        return view('index', compact('poem_categories', 'poems', 'title'));
     }
 }

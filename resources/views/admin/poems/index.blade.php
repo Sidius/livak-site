@@ -35,7 +35,6 @@
                                     <th style="width: 10px">#</th>
                                     <th>Наименование</th>
                                     <th>Slug</th>
-                                    <th>Text</th>
                                     <th>Category</th>
                                     <th>Actions</th>
                                 </tr>
@@ -46,7 +45,6 @@
                                             <td>{{ $poem->id }}</td>
                                             <td>{{ $poem->title }}</td>
                                             <td>{{ $poem->slug }}</td>
-                                            <td>{{ $poem->text }}</td>
                                             <td>{{ $poem->poemCategory ? $poem->poemCategory->title : 'Нет категории' }}</td>
                                             <td>
                                                 <a href="{{ route('admin.poems.edit', ['poem' => $poem->id]) }}" class="btn btn-info btn-sm float-left mr-1">
