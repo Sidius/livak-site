@@ -11,7 +11,7 @@
 
 @section('content')
 
-    @if(isset($poem_category) && count($poem_category->poems))
+    @if(isset($poem_category))
         <!-- Blog Start -->
         <div class="container-fluid pt-5" id="poems">
             <div class="container">
@@ -21,15 +21,19 @@
                 </div>
 
                 <div class="row">
-                    @foreach($poem_category->poems as $poem)
-                        <div class="col-lg-4 mb-5">
-                            <h5 class="font-weight-medium mb-4">{{ $poem->title }}</h5>
-                            <a class="btn btn-sm btn-outline-primary py-2"
-                               href="{{ route('poems.show', ['slug' => $poem->slug]) }}">
-                                Подробнее...
-                            </a>
-                        </div>
-                    @endforeach
+                    @if($poem_category->poems->count())
+                        @foreach($poem_category->poems as $poem)
+                            <div class="col-lg-4 mb-5">
+                                <h5 class="font-weight-medium mb-4">{{ $poem->title }}</h5>
+                                <a class="btn btn-sm btn-outline-primary py-2"
+                                   href="{{ route('poems.show', ['slug' => $poem->slug]) }}">
+                                    Подробнее...
+                                </a>
+                            </div>
+                        @endforeach
+                    @else
+                        <h3 class="mb-4">Поэм пока нет...</h3>
+                    @endif
                 </div>
             </div>
         </div>
@@ -47,13 +51,15 @@
 
                 <div class="row">
                     @foreach($poem_categories as $poem_category)
-                        <div class="col-lg-4 mb-5">
-                            <h5 class="font-weight-medium mb-4">{{ $poem_category->title }}</h5>
-                            <a class="btn btn-sm btn-outline-primary py-2"
-                               href="{{ route('poems.category', ['slug' => $poem_category->slug]) }}">
-                                Подробнее...
-                            </a>
-                        </div>
+                        @if($poem_category->poems->count())
+                            <div class="col-lg-4 mb-5">
+                                <h5 class="font-weight-medium mb-4">{{ $poem_category->title }}</h5>
+                                <a class="btn btn-sm btn-outline-primary py-2"
+                                   href="{{ route('poems.category', ['slug' => $poem_category->slug]) }}">
+                                    Подробнее...
+                                </a>
+                            </div>
+                        @endif
                     @endforeach
 
                     @foreach($poems as $poem)

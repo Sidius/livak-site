@@ -9,7 +9,7 @@
                 <h3 class="text-white font-weight-normal mb-3">Меня зовут</h3>
                 <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Елена Николаевна Ливак</h1>
                 <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                <div class="typed-text d-none">Декан факультета математики и информатики, Decan, Доцент, Front End Developer, Apps Designer, Apps Developer</div>
+                <div class="typed-text d-none">Декан факультета математики и информатики, Dean, Доцент</div>
             </div>
         </div>
     </div>
