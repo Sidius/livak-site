@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\MainController::class, 'index'])->name('home');
+Route::get('/poems/category/{slug}', [\App\Http\Controllers\PoemController::class, 'showCategory'])->name('poems.category');
+Route::get('/poems/{slug}', [\App\Http\Controllers\PoemController::class, 'show'])->name('poems.show');
 
 Route::prefix('admin')->namespace('\App\Http\Controllers\Admin')->name('admin.')->group(function () {
     Route::get('/', 'MainController@index')->name('index');
